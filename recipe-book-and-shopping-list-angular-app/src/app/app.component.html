@@ -1,13 +1,8 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
+<app-header></app-header>
 <div class="container-fluid">
   <div class="ml-3 row">
     <div class="col-md-12">
-      <app-recipes
-        *ngIf="loadedFeature === 'recipe'; else shoppingList"
-      ></app-recipes>
-      <ng-template #shoppingList>
-        <app-shopping-list></app-shopping-list>
-      </ng-template>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

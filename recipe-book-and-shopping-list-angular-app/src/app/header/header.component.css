@@ -1,0 +1,9 @@
+.active {
+  background-color: lightgray;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+  line-height: 2;
+}
