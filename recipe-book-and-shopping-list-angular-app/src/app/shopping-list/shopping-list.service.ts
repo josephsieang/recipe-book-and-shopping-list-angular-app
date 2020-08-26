@@ -11,6 +11,7 @@ export class ShoppingListService {
     new Ingredient('Apple', 5),
     new Ingredient('Tomatoes', 10),
   ];
+  startedEditing = new Subject<number>();
 
   constructor() {}
 
@@ -27,6 +28,16 @@ export class ShoppingListService {
 
   addIngredients(ingredients: Ingredient[]): void {
     this.ingredients.push(...ingredients);
+    this.ingredientChanged.next(this.ingredients.slice());
+  }
+
+  editIngredients(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
+    this.ingredientChanged.next(this.ingredients.slice());
+  }
+
+  deleteIngredient(index: number) {
+    this.ingredients.splice(index, 1);
     this.ingredientChanged.next(this.ingredients.slice());
   }
 }
