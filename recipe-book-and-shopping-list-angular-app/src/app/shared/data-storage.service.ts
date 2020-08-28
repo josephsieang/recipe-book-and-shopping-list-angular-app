@@ -38,6 +38,8 @@ export class DataStorageService {
           });
         }),
         tap((recipes: Recipe[]) => {
+          // why we do not need to get recipe in route in the component?
+          // because we set it here using service and get the recipe using service in the component
           this.recipeService.setRecipes(recipes);
         })
       );
