@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "./dist/recipe-book-and-shopping-list-angular-app",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
